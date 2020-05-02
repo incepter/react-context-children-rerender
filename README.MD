@@ -1,0 +1,3 @@
+This repository was created while writing [this medium article](https://medium.com/p/40de6662b074) and illustrates that:
+
+The context's provider direct children won't re-render every time the provider renders, but the consumers will. This rule is only valid for re-renders caused by the provider internally (state), but if his parent re-renders (props), the provider's children will re-render as well. Most of the time, the provider's state will change and will cause the provider to render (state values changes as data arrive from api or any other reason) If the direct children were to re-render, it would be a horrible performance issue. Here is codesandbox illustrating this behavior.
